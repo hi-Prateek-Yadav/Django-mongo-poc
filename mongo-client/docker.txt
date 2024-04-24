@@ -1,0 +1,18 @@
+============================= How to start ==========================
+* Open terminal where the code with dockerfile is present
+> docker build -t temp .
+> docker run -p 8000:8000 -v $(pwd):/code temp
+* And the server run for development on your pc :- http://localhost:8000/
+
+
+============================= How to clean docker ========================
+> docker stop $(docker ps -aq)
+> docker rm -f $(docker ps -aq)
+> docker rmi -f $(docker images -aq)
+> docker volume rm -f $(docker volume ls -q)
+
+
+
+
+python manage.py runserver 0.0.0.0:8000
+export PATH="$PATH:/root/.local/bin"
